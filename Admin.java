@@ -19,14 +19,14 @@ public class Admin extends JFrame implements ActionListener {
 
         p = new JPanel();
         p.setSize(new Dimension(400, 300));
-        p.setBackground(new Color(123, 104, 238)); // Fantasy background color
+        p.setBackground(new Color(123, 104, 238)); 
         p.setLayout(null);
 
         l1 = new JLabel("Admin Login");
-        l1.setFont(new Font("Arial", Font.BOLD, 20)); // Using Arial font
-        l1.setForeground(new Color(255, 255, 255)); // White text color
+        l1.setFont(new Font("Arial", Font.BOLD, 20)); 
+        l1.setForeground(new Color(255, 255, 255)); 
         l1.setBounds(130, 10, 150, 50);
-        l1.setBorder(BorderFactory.createLineBorder(Color.RED, 2)); // Red border
+        l1.setBorder(BorderFactory.createLineBorder(Color.RED, 2)); 
         p.add(l1);
 
         l = new JLabel("Username:");
@@ -51,9 +51,9 @@ public class Admin extends JFrame implements ActionListener {
 
         b = new JButton("Login");
         b.setBounds(150, 200, 100, 30);
-        b.setBackground(new Color(0, 0, 0)); // Black background color
-        b.setForeground(Color.WHITE); // White text color
-        b.setBorder(BorderFactory.createLineBorder(Color.WHITE)); // White border
+        b.setBackground(new Color(0, 0, 0)); 
+        b.setForeground(Color.WHITE); 
+        b.setBorder(BorderFactory.createLineBorder(Color.WHITE)); 
         b.setFont(new Font("Arial", Font.BOLD, 16));
         b.setFocusPainted(false);
         b.addActionListener(this);
