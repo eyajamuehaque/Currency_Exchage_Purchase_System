@@ -31,15 +31,15 @@ public class Congratulation extends JFrame {
                 + "<strong>Time of Purchase:</strong> " + currentTime + "</div></div></html>");
         label.setForeground(Color.WHITE); 
 
-        // Add the label to the panel
+       
         panel.add(label);
 
-        // Add the panel to the frame's content pane
+        
         this.add(panel, BorderLayout.CENTER);
     }
 
     public static void main(String[] args) {
-        // Test the Congratulation window
+        
         java.awt.EventQueue.invokeLater(() -> new Congratulation("John Doe", "$100", "Company X", "Credit Card").setVisible(true));
     }
 }
