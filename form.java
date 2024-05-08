@@ -36,7 +36,7 @@ public class form extends JFrame implements ActionListener {
         p.add(b3);
 
         adminLoginButton = createStyledButton("Admin Login", new Color(123, 104, 238), new Color(255, 215, 0));
-        adminLoginButton.setBounds(470, 500, 120, 40); // Change the color and border color
+        adminLoginButton.setBounds(470, 500, 120, 40); 
         p.add(adminLoginButton);
 
         this.add(p);
