@@ -48,7 +48,7 @@ public class form extends JFrame implements ActionListener {
         button.setForeground(Color.WHITE);
         button.setFocusPainted(false);
 
-        // Round the corners of the button
+        
         button.setBorder(BorderFactory.createLineBorder(border, 5, true));
         button.setOpaque(true);
         button.setBackground(background);
@@ -75,7 +75,7 @@ public class form extends JFrame implements ActionListener {
             Admin adminForm = new Admin();
             adminForm.setVisible(true);
         }
-        dispose(); // Close current window after button click
+        dispose();
     }
 
     public static void main(String[] args) {
