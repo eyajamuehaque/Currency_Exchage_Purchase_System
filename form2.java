@@ -16,23 +16,23 @@ public class form2 extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Create a panel with a BorderLayout to hold the background image
+        
         p = new JPanel(new BorderLayout()) {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                // Load and draw the background image
+                
                 Image image = new ImageIcon("login.png").getImage();
                 g.drawImage(image, 0, 0, getWidth(), getHeight(), this);
             }
         };
 
-        // Create a panel to hold the login components
+        
         JPanel loginPanel = new JPanel();
-        loginPanel.setOpaque(false); // Make the panel transparent
+        loginPanel.setOpaque(false); 
         loginPanel.setLayout(null);
 
-        // Set the layout null for absolute positioning of components
+        
 
 
         l2 = new JLabel("User Name");
@@ -90,7 +90,7 @@ public class form2 extends JFrame implements ActionListener {
         b2.addActionListener(this);
         loginPanel.add(b2);
 
-        // Add the login panel to the center of the background panel
+        
         p.add(loginPanel, BorderLayout.CENTER);
 
         this.add(p);
