@@ -13,7 +13,7 @@ public class CreateAccount {
     private FileWriter writer;
     private Scanner sc;
 
-    //Empty Constructor
+    
     public CreateAccount()
     {
         this.fullName="";
@@ -28,7 +28,7 @@ public class CreateAccount {
         this.userPassword=userPassword;
     }
 
-    //setter & getter method
+   
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
