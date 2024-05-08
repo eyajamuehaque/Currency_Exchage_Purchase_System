@@ -15,7 +15,7 @@ public class AdminPanel extends JFrame {
 
         panel = new JPanel();
         panel.setLayout(new BorderLayout());
-        panel.setBackground(new Color(240, 240, 240)); // Light gray background color
+        panel.setBackground(new Color(240, 240, 240));
 
         label = new JLabel("Registered Users:");
         label.setFont(new Font("Arial", Font.BOLD, 18));
@@ -28,14 +28,14 @@ public class AdminPanel extends JFrame {
         JScrollPane scrollPane = new JScrollPane(textArea);
         panel.add(scrollPane, BorderLayout.CENTER);
 
-        // Read registered user data from the file and display in the text area
+       
         try {
             File file = new File("bin\\files\\Users.txt");
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] userData = line.split("\t");
-                textArea.append("Name: " + userData[3] + "\n"); // Full Name
+                textArea.append("Name: " + userData[3] + "\n");
                 textArea.append("Password: " + userData[1] + "\n");
                 textArea.append("NID: " + userData[2] + "\n");
                 textArea.append("Username: " + userData[0] + "\n");
