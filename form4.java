@@ -50,7 +50,7 @@ public class form4 extends JFrame implements ActionListener {
 		
 
 
-        // Set text for the first text field
+        
         t1.setText("Choose your amount");
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -76,7 +76,7 @@ public class form4 extends JFrame implements ActionListener {
         jPanel1.add(jButtonBuy);
         jPanel1.add(t2);
 
-        // Set the positions and sizes of components
+        
         jLabel1.setBounds(50, 50, 150, 30);
         firstCountry.setBounds(200, 50, 150, 30);
         jLabel2.setBounds(400, 50, 150, 30);
@@ -91,10 +91,10 @@ public class form4 extends JFrame implements ActionListener {
 
         t1.setOpaque(false);
         t2.setOpaque(false);
-        t1.setBorder(BorderFactory.createEmptyBorder()); // Remove border
-        t2.setBorder(BorderFactory.createEmptyBorder()); // Remove border
+        t1.setBorder(BorderFactory.createEmptyBorder());
+        t2.setBorder(BorderFactory.createEmptyBorder());
 
-        // Set foreground color for buttons to white
+       
         for (Component c : jPanel1.getComponents()) {
             if (c instanceof JButton) {
                 JButton button = (JButton) c;
@@ -102,8 +102,8 @@ public class form4 extends JFrame implements ActionListener {
             }
         }
 
-        // Set background color and border for buttons
-        Color buttonBgColor = new Color(0, 128, 0); // Green color
+        
+        Color buttonBgColor = new Color(0, 128, 0);
         for (Component c : jPanel1.getComponents()) {
             if (c instanceof JButton) {
                 JButton button = (JButton) c;
@@ -115,7 +115,7 @@ public class form4 extends JFrame implements ActionListener {
         add(jPanel1);
         setSize(800, 600);
 
-        // Center the window on the screen
+       
         setLocationRelativeTo(null);
 
         setVisible(true);
@@ -953,40 +953,40 @@ public class form4 extends JFrame implements ActionListener {
     }
 
     private void jButtonBuyActionPerformed(ActionEvent evt) {
-        // Define offering rates for each company
+       
         Random random = new Random();
         double[] offeringRates = new double[5];
 
-        // Generate random offering rates around the converted amount
+        
         double convertedAmount = Double.parseDouble(t2.getText());
         for (int i = 0; i < 5; i++) {
-            // Generate a random value between 0.95 and 1.05 of the converted amount
+            
             offeringRates[i] = convertedAmount * (0.95 + (0.1 * random.nextDouble()));
         }
 
-        // Display the offering rates for each company
+       
         StringBuilder message = new StringBuilder("Offering Rates:\n");
         String[] paymentCompanies = {"Company A", "Company B", "Company C", "Company D", "Company E"};
         for (int i = 0; i < 5; i++) {
             message.append(paymentCompanies[i]).append(": ").append(String.format("%.2f", offeringRates[i])).append("\n");
         }
 
-        // Display the offering rates to the user
+        
         String selectedCompany = (String) JOptionPane.showInputDialog(this, message.toString(), "Select Payment Company", JOptionPane.PLAIN_MESSAGE, null, paymentCompanies, paymentCompanies[0]);
 
         if (selectedCompany != null) {
-            // If the user selects a company, display payment method options
+            
             String[] paymentMethods = {"Credit Card", "PayPal", "Bitcoin", "Bank Transfer", "Cash"};
             String selectedMethod = (String) JOptionPane.showInputDialog(this, "Select Payment Method", "Payment Methods", JOptionPane.PLAIN_MESSAGE, null, paymentMethods, paymentMethods[0]);
 
             if (selectedMethod != null) {
-                // If the user selects a payment method, display confirmation
+               
                 int confirmation = JOptionPane.showConfirmDialog(this, "Payment Successful!\nCompany: " + selectedCompany + "\nMethod: " + selectedMethod + "\nDo you want to see Congratulations message?", "Payment Confirmation", JOptionPane.YES_NO_OPTION);
 
                 if (confirmation == JOptionPane.YES_OPTION) {
-                    // Open the Congratulation window
+                    
                     double amount = Double.parseDouble(t2.getText());
-                    String username = ""; // Get the username from createAccount() function or wherever it's stored
+                    String username = "";
                     String companyName = selectedCompany;
                     String method = selectedMethod;
                     new Congratulation(username, String.valueOf(amount), companyName, method).setVisible(true);
