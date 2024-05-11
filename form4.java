@@ -3,8 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 
-
-public class form4 extends JFrame implements ActionListener {
+public class form4 extends BaseFrame implements ActionListener {
     JPanel jPanel1;
     JLabel jLabel1;
     JComboBox<String> firstCountry, secondCountry;
@@ -12,24 +11,25 @@ public class form4 extends JFrame implements ActionListener {
     JTextField t1, t2;
     JButton jButton1, jButton2, jButtonLogout, jButtonBuy;
 
-    double US_Dollar = 1.0;
-    double Indian_Rupee = 74.23;
-    double Brazilian_Real = 5.40;
-    double Canadian_Dollar = 1.37;
-    double European_Euro = 0.87;
-    double Pound_Sterling = 0.78;
-    double Japanese_Yen = 111.15;
-    double Swiss_Franc = 0.99;
-    double Chinese_Yuan = 6.65;
-    double South_African_Rand = 16.31;
-    double Mexican_Peso = 21.35;
-    double Argentine_Peso = 93.49;
-    double Russian_Ruble = 0.013;
-    double South_Korean_Won = 1155.54;
-    double Taiwanese_Dollar = 31.48;
-    double Australian_Dollar = 1.44;
+    private double US_Dollar = 1.0;
+    private double Bangladeshi_Taka = 74.23;
+    private double Brazilian_Real = 5.40;
+    private double Canadian_Dollar = 1.37;
+    private double European_Euro = 0.87;
+    private double Pound_Sterling = 0.78;
+    private double Japanese_Yen = 111.15;
+    private double Swiss_Franc = 0.99;
+    private double Chinese_Yuan = 6.65;
+    private double South_African_Rand = 16.31;
+    private double Mexican_Peso = 21.35;
+    private double Argentine_Peso = 93.49;
+    private double Russian_Ruble = 0.013;
+    private double South_Korean_Won = 1155.54;
+    private double Taiwanese_Dollar = 31.48;
+    private double Australian_Dollar = 1.44;
 
     form4() {
+		super("Purchase Currency");
         jPanel1 = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -53,12 +53,12 @@ public class form4 extends JFrame implements ActionListener {
         
         t1.setText("Choose your amount");
 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(BaseFrame.EXIT_ON_CLOSE);
         setTitle("Currency Converter");
         jPanel1.setLayout(null);
 
-        firstCountry = new JComboBox<>(new String[]{"US Dollar", "Indian Rupee", "Brazilian Real", "Canadian Dollar", "European Euro", "Pound Sterling", "Japanese Yen", "Swiss Franc", "Chinese Yuan", "South African Rand", "Mexican Peso", "Argentine Peso", "Russian Ruble", "South Korean Won", "Taiwanese Dollar", "Australian Dollar"});
-        secondCountry = new JComboBox<>(new String[]{"US Dollar", "Indian Rupee", "Brazilian Real", "Canadian Dollar", "European Euro", "Pound Sterling", "Japanese Yen", "Swiss Franc", "Chinese Yuan", "South African Rand", "Mexican Peso", "Argentine Peso", "Russian Ruble", "South Korean Won", "Taiwanese Dollar", "Australian Dollar"});
+        firstCountry = new JComboBox<>(new String[]{"US Dollar", "Bangladeshi Taka", "Brazilian Real", "Canadian Dollar", "European Euro", "Pound Sterling", "Japanese Yen", "Swiss Franc", "Chinese Yuan", "South African Rand", "Mexican Peso", "Argentine Peso", "Russian Ruble", "South Korean Won", "Taiwanese Dollar", "Australian Dollar"});
+        secondCountry = new JComboBox<>(new String[]{"US Dollar", "Bangladeshi Taka", "Brazilian Real", "Canadian Dollar", "European Euro", "Pound Sterling", "Japanese Yen", "Swiss Franc", "Chinese Yuan", "South African Rand", "Mexican Peso", "Argentine Peso", "Russian Ruble", "South Korean Won", "Taiwanese Dollar", "Australian Dollar"});
 
         jButton1.addActionListener(this);
         jButton2.addActionListener(this);
@@ -76,7 +76,7 @@ public class form4 extends JFrame implements ActionListener {
         jPanel1.add(jButtonBuy);
         jPanel1.add(t2);
 
-        
+      
         jLabel1.setBounds(50, 50, 150, 30);
         firstCountry.setBounds(200, 50, 150, 30);
         jLabel2.setBounds(400, 50, 150, 30);
@@ -92,7 +92,7 @@ public class form4 extends JFrame implements ActionListener {
         t1.setOpaque(false);
         t2.setOpaque(false);
         t1.setBorder(BorderFactory.createEmptyBorder());
-        t2.setBorder(BorderFactory.createEmptyBorder());
+        t2.setBorder(BorderFactory.createEmptyBorder()); 
 
        
         for (Component c : jPanel1.getComponents()) {
@@ -102,7 +102,7 @@ public class form4 extends JFrame implements ActionListener {
             }
         }
 
-        
+    
         Color buttonBgColor = new Color(0, 128, 0);
         for (Component c : jPanel1.getComponents()) {
             if (c instanceof JButton) {
@@ -113,16 +113,160 @@ public class form4 extends JFrame implements ActionListener {
         }
 
         add(jPanel1);
-        setSize(800, 600);
 
-       
-        setLocationRelativeTo(null);
 
         setVisible(true);
 		
 
 		
     }
+	
+	
+	     // Get and set methods
+    public double getUSDollar() {
+        return US_Dollar;
+    }
+
+    public void setUSDollar(double US_Dollar) {
+        this.US_Dollar = US_Dollar;
+    }
+
+   
+    public double getBangladeshiTaka() {
+        return Bangladeshi_Taka;
+    }
+
+    public void setBangladeshiTaka(double Bangladeshi_Taka) {
+        this.Bangladeshi_Taka = Bangladeshi_Taka;
+    }
+
+   
+    public double getBrazilianReal() {
+        return Brazilian_Real;
+    }
+
+    public void setBrazilianReal(double Brazilian_Real) {
+        this.Brazilian_Real = Brazilian_Real;
+    }
+
+   
+    public double getCanadianDollar() {
+        return Canadian_Dollar;
+    }
+
+    public void setCanadianDollar(double Canadian_Dollar) {
+        this.Canadian_Dollar = Canadian_Dollar;
+    }
+
+   
+    public double getEuropeanEuro() {
+        return European_Euro;
+    }
+
+    public void setEuropeanEuro(double European_Euro) {
+        this.European_Euro = European_Euro;
+    }
+
+   
+    public double getPoundSterling() {
+        return Pound_Sterling;
+    }
+
+    public void setPoundSterling(double Pound_Sterling) {
+        this.Pound_Sterling = Pound_Sterling;
+    }
+
+  
+    public double getJapaneseYen() {
+        return Japanese_Yen;
+    }
+
+    public void setJapaneseYen(double Japanese_Yen) {
+        this.Japanese_Yen = Japanese_Yen;
+    }
+
+   
+    public double getSwissFranc() {
+        return Swiss_Franc;
+    }
+
+    public void setSwissFranc(double Swiss_Franc) {
+        this.Swiss_Franc = Swiss_Franc;
+    }
+
+    
+    public double getChineseYuan() {
+        return Chinese_Yuan;
+    }
+
+    public void setChineseYuan(double Chinese_Yuan) {
+        this.Chinese_Yuan = Chinese_Yuan;
+    }
+
+   
+    public double getSouthAfricanRand() {
+        return South_African_Rand;
+    }
+
+    public void setSouthAfricanRand(double South_African_Rand) {
+        this.South_African_Rand = South_African_Rand;
+    }
+
+    
+    public double getMexicanPeso() {
+        return Mexican_Peso;
+    }
+
+    public void setMexicanPeso(double Mexican_Peso) {
+        this.Mexican_Peso = Mexican_Peso;
+    }
+
+    
+    public double getArgentinePeso() {
+        return Argentine_Peso;
+    }
+
+    public void setArgentinePeso(double Argentine_Peso) {
+        this.Argentine_Peso = Argentine_Peso;
+    }
+
+    
+    public double getRussianRuble() {
+        return Russian_Ruble;
+    }
+
+    public void setRussianRuble(double Russian_Ruble) {
+        this.Russian_Ruble = Russian_Ruble;
+    }
+
+    
+    public double getSouthKoreanWon() {
+        return South_Korean_Won;
+    }
+
+    public void setSouthKoreanWon(double South_Korean_Won) {
+        this.South_Korean_Won = South_Korean_Won;
+    }
+
+    
+    public double getTaiwaneseDollar() {
+        return Taiwanese_Dollar;
+    }
+
+    public void setTaiwaneseDollar(double Taiwanese_Dollar) {
+        this.Taiwanese_Dollar = Taiwanese_Dollar;
+    }
+
+    
+    public double getAustralianDollar() {
+        return Australian_Dollar;
+    }
+
+    public void setAustralianDollar(double Australian_Dollar) {
+        this.Australian_Dollar = Australian_Dollar;
+    }
+	
+	
 
     @Override
    public void actionPerformed(ActionEvent e) {
@@ -146,8 +290,8 @@ public class form4 extends JFrame implements ActionListener {
         switch (fromCountry) {
             case "US Dollar":
                 switch (toCountry) {
-                    case "Indian Rupee":
-                        toValue = fromValue * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue * Brazilian_Real;
@@ -193,52 +337,52 @@ public class form4 extends JFrame implements ActionListener {
                         break;
                 }
                 break;
-            case "Indian Rupee":
+            case "Bangladeshi Taka":
                 switch (toCountry) {
                     case "US Dollar":
-                        toValue = fromValue / Indian_Rupee;
+                        toValue = fromValue / Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
-                        toValue = fromValue / Indian_Rupee * Brazilian_Real;
+                        toValue = fromValue / Bangladeshi_Taka * Brazilian_Real;
                         break;
                     case "Canadian Dollar":
-                        toValue = fromValue / Indian_Rupee * Canadian_Dollar;
+                        toValue = fromValue / Bangladeshi_Taka * Canadian_Dollar;
                         break;
                     case "European Euro":
-                        toValue = fromValue / Indian_Rupee * European_Euro;
+                        toValue = fromValue / Bangladeshi_Taka * European_Euro;
                         break;
                     case "Pound Sterling":
-                        toValue = fromValue / Indian_Rupee * Pound_Sterling;
+                        toValue = fromValue / Bangladeshi_Taka * Pound_Sterling;
                         break;
                     case "Japanese Yen":
-                        toValue = fromValue / Indian_Rupee * Japanese_Yen;
+                        toValue = fromValue / Bangladeshi_Taka * Japanese_Yen;
                         break;
                     case "Swiss Franc":
-                        toValue = fromValue / Indian_Rupee * Swiss_Franc;
+                        toValue = fromValue / Bangladeshi_Taka * Swiss_Franc;
                         break;
                     case "Chinese Yuan":
-                        toValue = fromValue / Indian_Rupee * Chinese_Yuan;
+                        toValue = fromValue / Bangladeshi_Taka * Chinese_Yuan;
                         break;
                     case "South African Rand":
-                        toValue = fromValue / Indian_Rupee * South_African_Rand;
+                        toValue = fromValue / Bangladeshi_Taka * South_African_Rand;
                         break;
                     case "Mexican Peso":
-                        toValue = fromValue / Indian_Rupee * Mexican_Peso;
+                        toValue = fromValue / Bangladeshi_Taka * Mexican_Peso;
                         break;
                     case "Argentine Peso":
-                        toValue = fromValue / Indian_Rupee * Argentine_Peso;
+                        toValue = fromValue / Bangladeshi_Taka * Argentine_Peso;
                         break;
                     case "Russian Ruble":
-                        toValue = fromValue / Indian_Rupee * Russian_Ruble;
+                        toValue = fromValue / Bangladeshi_Taka * Russian_Ruble;
                         break;
                     case "South Korean Won":
-                        toValue = fromValue / Indian_Rupee * South_Korean_Won;
+                        toValue = fromValue / Bangladeshi_Taka * South_Korean_Won;
                         break;
                     case "Taiwanese Dollar":
-                        toValue = fromValue / Indian_Rupee * Taiwanese_Dollar;
+                        toValue = fromValue / Bangladeshi_Taka * Taiwanese_Dollar;
                         break;
                     case "Australian Dollar":
-                        toValue = fromValue / Indian_Rupee * Australian_Dollar;
+                        toValue = fromValue / Bangladeshi_Taka * Australian_Dollar;
                         break;
                 }
                 break;
@@ -247,8 +391,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Brazilian_Real;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Brazilian_Real * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Brazilian_Real * Bangladeshi_Taka;
                         break;
                     case "Canadian Dollar":
                         toValue = fromValue / Brazilian_Real * Canadian_Dollar;
@@ -296,8 +440,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Canadian_Dollar;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Canadian_Dollar * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Canadian_Dollar * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / Canadian_Dollar * Brazilian_Real;
@@ -345,8 +489,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / European_Euro;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / European_Euro * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / European_Euro * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / European_Euro * Brazilian_Real;
@@ -394,8 +538,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Pound_Sterling;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Pound_Sterling * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Pound_Sterling * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / Pound_Sterling * Brazilian_Real;
@@ -443,8 +587,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Japanese_Yen;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Japanese_Yen * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Japanese_Yen * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / Japanese_Yen * Brazilian_Real;
@@ -492,8 +636,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Swiss_Franc;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Swiss_Franc * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Swiss_Franc * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / Swiss_Franc * Brazilian_Real;
@@ -541,8 +685,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Chinese_Yuan;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Chinese_Yuan * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Chinese_Yuan * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / Chinese_Yuan * Brazilian_Real;
@@ -590,8 +734,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / South_African_Rand;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / South_African_Rand * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / South_African_Rand * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / South_African_Rand * Brazilian_Real;
@@ -639,8 +783,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Mexican_Peso;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Mexican_Peso * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Mexican_Peso * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / Mexican_Peso * Brazilian_Real;
@@ -688,8 +832,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Argentine_Peso;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Argentine_Peso * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Argentine_Peso * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / Argentine_Peso * Brazilian_Real;
@@ -737,8 +881,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Russian_Ruble;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Russian_Ruble * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Russian_Ruble * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / Russian_Ruble * Brazilian_Real;
@@ -786,8 +930,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / South_Korean_Won;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / South_Korean_Won * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / South_Korean_Won * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / South_Korean_Won * Brazilian_Real;
@@ -835,8 +979,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Taiwanese_Dollar;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Taiwanese_Dollar * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Taiwanese_Dollar * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / Taiwanese_Dollar * Brazilian_Real;
@@ -884,8 +1028,8 @@ public class form4 extends JFrame implements ActionListener {
                     case "US Dollar":
                         toValue = fromValue / Australian_Dollar;
                         break;
-                    case "Indian Rupee":
-                        toValue = fromValue / Australian_Dollar * Indian_Rupee;
+                    case "Bangladeshi Taka":
+                        toValue = fromValue / Australian_Dollar * Bangladeshi_Taka;
                         break;
                     case "Brazilian Real":
                         toValue = fromValue / Australian_Dollar * Brazilian_Real;
@@ -953,20 +1097,19 @@ public class form4 extends JFrame implements ActionListener {
     }
 
     private void jButtonBuyActionPerformed(ActionEvent evt) {
-       
+      
         Random random = new Random();
         double[] offeringRates = new double[5];
 
         
         double convertedAmount = Double.parseDouble(t2.getText());
         for (int i = 0; i < 5; i++) {
-            
             offeringRates[i] = convertedAmount * (0.95 + (0.1 * random.nextDouble()));
         }
 
-       
+        // Display the offering rates for each company
         StringBuilder message = new StringBuilder("Offering Rates:\n");
-        String[] paymentCompanies = {"Company A", "Company B", "Company C", "Company D", "Company E"};
+        String[] paymentCompanies = {"JPMorgan Chase", "XTX Markets", "Deutsche Bank", "Goldman Sachs", "BNP Paribas"};
         for (int i = 0; i < 5; i++) {
             message.append(paymentCompanies[i]).append(": ").append(String.format("%.2f", offeringRates[i])).append("\n");
         }
@@ -975,18 +1118,18 @@ public class form4 extends JFrame implements ActionListener {
         String selectedCompany = (String) JOptionPane.showInputDialog(this, message.toString(), "Select Payment Company", JOptionPane.PLAIN_MESSAGE, null, paymentCompanies, paymentCompanies[0]);
 
         if (selectedCompany != null) {
-            
+            // If the user selects a company, display payment method options
             String[] paymentMethods = {"Credit Card", "PayPal", "Bitcoin", "Bank Transfer", "Cash"};
             String selectedMethod = (String) JOptionPane.showInputDialog(this, "Select Payment Method", "Payment Methods", JOptionPane.PLAIN_MESSAGE, null, paymentMethods, paymentMethods[0]);
 
             if (selectedMethod != null) {
-               
+                // If the user selects a payment method, display confirmation
                 int confirmation = JOptionPane.showConfirmDialog(this, "Payment Successful!\nCompany: " + selectedCompany + "\nMethod: " + selectedMethod + "\nDo you want to see Congratulations message?", "Payment Confirmation", JOptionPane.YES_NO_OPTION);
 
                 if (confirmation == JOptionPane.YES_OPTION) {
-                    
+                    // Open the Congratulation window
                     double amount = Double.parseDouble(t2.getText());
-                    String username = "";
+                    String username = ""; 
                     String companyName = selectedCompany;
                     String method = selectedMethod;
                     new Congratulation(username, String.valueOf(amount), companyName, method).setVisible(true);
