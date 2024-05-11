@@ -2,16 +2,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class form extends JFrame implements ActionListener {
+public class form extends BaseFrame implements ActionListener {
     JPanel p;
     JButton b1, b2, b3, adminLoginButton;
 
     public form() {
-        super();
-        this.setSize(800, 600);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        super("Home Page");
+
 
         p = new JPanel() {
             @Override
@@ -48,7 +45,7 @@ public class form extends JFrame implements ActionListener {
         button.setForeground(Color.WHITE);
         button.setFocusPainted(false);
 
-        
+       
         button.setBorder(BorderFactory.createLineBorder(border, 5, true));
         button.setOpaque(true);
         button.setBackground(background);
@@ -75,7 +72,7 @@ public class form extends JFrame implements ActionListener {
             Admin adminForm = new Admin();
             adminForm.setVisible(true);
         }
-        dispose();
+        dispose(); 
     }
 
     public static void main(String[] args) {
