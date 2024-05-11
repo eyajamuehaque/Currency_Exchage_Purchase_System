@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 
-public class Admin extends JFrame implements ActionListener {
+public class Admin extends BaseFrame implements ActionListener {
     JPanel p;
     JLabel l, l1;
     JTextField tf;
@@ -12,10 +12,7 @@ public class Admin extends JFrame implements ActionListener {
 
     Admin() {
         super("Admin Login");
-        this.setSize(400, 300);
-        this.setLocationRelativeTo(null);
-        this.setResizable(false);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
 
         p = new JPanel();
         p.setSize(new Dimension(400, 300));
@@ -68,7 +65,7 @@ public class Admin extends JFrame implements ActionListener {
 
         if (username.equals("admin") && password.equals("admin")) {
             JOptionPane.showMessageDialog(null, "Login successful!");
-            // Open AdminPanel.java
+            
             AdminPanel adminPanel = new AdminPanel();
             this.setVisible(false);
             adminPanel.setVisible(true);
