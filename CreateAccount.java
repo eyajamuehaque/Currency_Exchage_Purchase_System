@@ -28,7 +28,7 @@ public class CreateAccount {
         this.userPassword=userPassword;
     }
 
-   
+    //set & get method
     public void setFullName(String fullName) {
         this.fullName = fullName;
     }
