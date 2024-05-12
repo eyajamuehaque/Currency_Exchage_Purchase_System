@@ -126,17 +126,17 @@ public class form2 extends BaseForm {
         }
     }
 
-    // Using polymorphic behavior for getting username
+    
     public String getUserName() {
         return un.getText();
     }
 
-    // Using polymorphic behavior for getting password
+    
     public String getUserPassword() {
         return pw.getText();
     }
 
-    // Using polymorphic behavior for getting captcha
+   
     public String getCaptchaInput() {
         return captchaInput.getText();
     }
