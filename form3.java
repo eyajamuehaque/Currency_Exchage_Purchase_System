@@ -112,7 +112,7 @@ public class form3 extends BaseFrame implements ActionListener {
         this.add(p);
     }
 
-    
+    // Get methods for accessing private fields
     public String getFullName() {
         return t1.getText();
     }
@@ -137,7 +137,7 @@ public class form3 extends BaseFrame implements ActionListener {
         return t6.getText();
     }
 
-    
+    // Set methods for modifying private fields
     public void setFullName(String fullName) {
         t1.setText(fullName);
     }
@@ -176,7 +176,7 @@ public class form3 extends BaseFrame implements ActionListener {
             } else if (userPassword.equals(userPasswordConfirm)) {
                 CreateAccount createAccount = new CreateAccount(fullName, nID, userEmail, userName, userPassword);
                 createAccount.addAccount();
-                JOptionPane.showMessageDialog(null, "Account Added");
+                JOptionPane.showMessageDialog(null, "Sign Up Successful");
                 setFullName("");
                 setNID("");
                 setUserEmail("");
