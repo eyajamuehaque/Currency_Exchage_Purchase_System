@@ -122,7 +122,7 @@ public class form4 extends BaseFrame implements ActionListener {
     }
 	
 	
-	     
+	     // Get and set methods
     public double getUSDollar() {
         return US_Dollar;
     }
@@ -1118,16 +1118,16 @@ public class form4 extends BaseFrame implements ActionListener {
         String selectedCompany = (String) JOptionPane.showInputDialog(this, message.toString(), "Select Payment Company", JOptionPane.PLAIN_MESSAGE, null, paymentCompanies, paymentCompanies[0]);
 
         if (selectedCompany != null) {
-           
+            // If the user selects a company, display payment method options
             String[] paymentMethods = {"Credit Card", "PayPal", "Bitcoin", "Bank Transfer", "Cash"};
             String selectedMethod = (String) JOptionPane.showInputDialog(this, "Select Payment Method", "Payment Methods", JOptionPane.PLAIN_MESSAGE, null, paymentMethods, paymentMethods[0]);
 
             if (selectedMethod != null) {
-                
+                // If the user selects a payment method, display confirmation
                 int confirmation = JOptionPane.showConfirmDialog(this, "Payment Successful!\nCompany: " + selectedCompany + "\nMethod: " + selectedMethod + "\nDo you want to see Congratulations message?", "Payment Confirmation", JOptionPane.YES_NO_OPTION);
 
                 if (confirmation == JOptionPane.YES_OPTION) {
-                    
+                    // Open the Congratulation window
                     double amount = Double.parseDouble(t2.getText());
                     String username = ""; 
                     String companyName = selectedCompany;
