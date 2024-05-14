@@ -1,0 +1,12 @@
+Username: 
+Rating: 1 stars
+Comment: 
+---------------
+Name: TestUser
+Rating: 5 stars
+Comment: Clear and organized app.
+---------------
+Name: JohnDoe
+Rating: 1 stars
+Comment: Missing functionality guidance.
+---------------
