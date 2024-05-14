@@ -95,22 +95,26 @@ public class form4 extends BaseFrame implements ActionListener {
         t2.setBorder(BorderFactory.createEmptyBorder()); 
 
        
-        for (Component c : jPanel1.getComponents()) {
-            if (c instanceof JButton) {
-                JButton button = (JButton) c;
-                button.setForeground(Color.WHITE);
-            }
-        }
+        
+       jButton1.setForeground(Color.WHITE);
+       jButton1.setBackground(new Color(0, 128, 0));
+       jButton1.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+
+       jButton2.setForeground(Color.WHITE);
+       jButton2.setBackground(new Color(0, 128, 0));
+       jButton2.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+
+       jButtonLogout.setForeground(Color.WHITE);
+       jButtonLogout.setBackground(new Color(0, 128, 0));
+       jButtonLogout.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+
+       jButtonBuy.setForeground(Color.WHITE);
+       jButtonBuy.setBackground(new Color(0, 128, 0));
+       jButtonBuy.setBorder(BorderFactory.createLineBorder(Color.WHITE));
+
 
     
-        Color buttonBgColor = new Color(0, 128, 0);
-        for (Component c : jPanel1.getComponents()) {
-            if (c instanceof JButton) {
-                JButton button = (JButton) c;
-                button.setBackground(buttonBgColor);
-                button.setBorder(BorderFactory.createLineBorder(Color.WHITE));
-            }
-        }
+
 
         add(jPanel1);
 
