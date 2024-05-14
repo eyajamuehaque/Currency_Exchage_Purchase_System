@@ -7,7 +7,7 @@ public class form extends BaseFrame implements ActionListener {
     JButton b1, b2, b3, adminLoginButton;
 
     public form() {
-        super("Home Page");
+        super("Main Page");
 
 
         p = new JPanel() {
