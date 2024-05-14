@@ -14,7 +14,7 @@ public class AdminPanel extends BaseFrame {
         panel.setLayout(new BorderLayout());
         panel.setBackground(new Color(240, 240, 240)); 
 
-        label = new JLabel("Registered Users:");
+        label = new JLabel("Registered Users:");//240 is number of colour
         label.setFont(new Font("Arial", Font.BOLD, 18));
         label.setHorizontalAlignment(SwingConstants.CENTER);
         panel.add(label, BorderLayout.NORTH);
