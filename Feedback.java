@@ -2,12 +2,14 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Feedback extends JFrame {
+
+    private List<String> feedbackEntries = new ArrayList<>();
+
     public Feedback() {
         setTitle("Feedback");
         setSize(700, 500);
@@ -62,11 +64,95 @@ public class Feedback extends JFrame {
             }
         });
         submitButton.setFont(new Font("Arial", Font.BOLD, 16));
-        submitButton.setBounds(150, 280, 100, 30);
+        submitButton.setBounds(50, 280, 100, 30);
         panel.add(submitButton);
+
+        JButton updateButton = new JButton("Update");
+        updateButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                readFeedbackEntries();
+                String selectedEntry = (String) JOptionPane.showInputDialog(null, "Select feedback to update:",
+                        "Update Feedback", JOptionPane.PLAIN_MESSAGE, null, feedbackEntries.toArray(), feedbackEntries.get(0));
+                if (selectedEntry != null) {
+                    int index = feedbackEntries.indexOf(selectedEntry);
+                    String name = nameField.getText();
+                    int rating = (int) ratingComboBox.getSelectedItem();
+                    String comment = commentTextArea.getText();
+                    String updatedEntry = "Name: " + name + "\nRating: " + rating + " stars\nComment: " + comment + "\n";
+                    updateFeedbackEntry(index, updatedEntry);
+                }
+            }
+        });
+        updateButton.setFont(new Font("Arial", Font.BOLD, 16));
+        updateButton.setBounds(160, 280, 100, 30);
+        panel.add(updateButton);
+
+        JButton deleteButton = new JButton("Delete");
+        deleteButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                readFeedbackEntries();
+                String selectedEntry = (String) JOptionPane.showInputDialog(null, "Select feedback to delete:",
+                        "Delete Feedback", JOptionPane.PLAIN_MESSAGE, null, feedbackEntries.toArray(), feedbackEntries.get(0));
+                if (selectedEntry != null) {
+                    int index = feedbackEntries.indexOf(selectedEntry);
+                    deleteFeedbackEntry(index);
+                }
+            }
+        });
+        deleteButton.setFont(new Font("Arial", Font.BOLD, 16));
+        deleteButton.setBounds(270, 280, 100, 30);
+        panel.add(deleteButton);
 
         add(panel);
         setVisible(true);
+    }
+
+    private void readFeedbackEntries() {
+        feedbackEntries.clear();
+        File feedbackFile = new File("Feedback\\feedback.txt");
+        try (BufferedReader reader = new BufferedReader(new FileReader(feedbackFile))) {
+            String line;
+            StringBuilder entry = new StringBuilder();
+            while ((line = reader.readLine()) != null) {
+                if (line.equals("---------------")) {
+                    feedbackEntries.add(entry.toString());
+                    entry = new StringBuilder();
+                } else {
+                    entry.append(line).append("\n");
+                }
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error reading feedback: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+    private void updateFeedbackEntry(int index, String updatedEntry) {
+        if (index >= 0 && index < feedbackEntries.size()) {
+            feedbackEntries.set(index, updatedEntry);
+            saveAllFeedbackEntries();
+        }
+    }
+
+    private void deleteFeedbackEntry(int index) {
+        if (index >= 0 && index < feedbackEntries.size()) {
+            feedbackEntries.remove(index);
+            saveAllFeedbackEntries();
+        }
+    }
+
+    private void saveAllFeedbackEntries() {
+        File feedbackFile = new File("Feedback\\feedback.txt");
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(feedbackFile))) {
+            for (String entry : feedbackEntries) {
+                writer.write(entry);
+                writer.write("---------------\n");
+            }
+            JOptionPane.showMessageDialog(this, "Feedback updated successfully!");
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error saving feedback: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     private void saveFeedback(String name, int rating, String comment) {
