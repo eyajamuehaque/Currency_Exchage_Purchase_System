@@ -8,9 +8,7 @@ public class Congratulation extends BaseFrame {
 
     public Congratulation(String username, String purchaseAmount, String companyName, String paymentMethod) {
         super("Congratulations!");
-        this.setSize(600, 400);
-        this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(BaseFrame.EXIT_ON_CLOSE);
+
         this.getContentPane().setBackground(new Color(123, 104, 138)); 
 
         
