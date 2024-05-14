@@ -59,7 +59,10 @@ public class CreateAccount {
     public String getUserPassword() {
         return userPassword;
     }
-
+	
+	
+    //This is where insert is used
+	
     public void addAccount()
     {
         try
@@ -80,6 +83,8 @@ public class CreateAccount {
             ioe.printStackTrace();
         }
     }
+
+    //This is where get is used
 
     public boolean getAccount(String userName,String userPassword)
     {
