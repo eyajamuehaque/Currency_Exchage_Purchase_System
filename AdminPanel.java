@@ -25,7 +25,7 @@ public class AdminPanel extends BaseFrame {
         JScrollPane scrollPane = new JScrollPane(textArea);
         panel.add(scrollPane, BorderLayout.CENTER);
 
-        
+        // Read registered user data from the file and display in the text area
         try {
             File file = new File("bin\\files\\Users.txt");
             BufferedReader reader = new BufferedReader(new FileReader(file));
