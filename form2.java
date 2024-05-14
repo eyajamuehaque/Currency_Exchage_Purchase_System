@@ -10,7 +10,7 @@ public class form2 extends BaseForm {
 
     form2() {
         super("Sign In");
-		this.setSize(800, 600);
+	this.setSize(800, 600);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
