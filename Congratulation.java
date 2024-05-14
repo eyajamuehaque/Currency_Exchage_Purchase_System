@@ -30,13 +30,8 @@ public class Congratulation extends BaseFrame {
         panel.add(label, BorderLayout.CENTER);
 
         JButton feedbackButton = new JButton("Leave Feedback");
-        feedbackButton.addActionListener(e -> new Feedback(username));
-
-        JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        buttonPanel.setBackground(new Color(123, 104, 238)); // Match background color
-        buttonPanel.add(feedbackButton);
-
-        panel.add(buttonPanel, BorderLayout.SOUTH);
+        feedbackButton.addActionListener(e -> new Feedback());
+        panel.add(feedbackButton, BorderLayout.SOUTH);
 
         this.add(panel, BorderLayout.CENTER);
     }
